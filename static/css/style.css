@@ -1,0 +1,210 @@
+/* ROBETS TRAVEL AGENTS - Custom Styles */
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #fafaf8;
+}
+
+/* Card hover effects */
+.card-hover {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-hover:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 40px -10px rgba(0,0,0,0.2);
+}
+
+/* WhatsApp floating button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+    background: #25d366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s;
+    text-decoration: none;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.15) rotate(-5deg);
+    background: #1ebe5c;
+    color: white;
+}
+
+/* Newsletter input */
+.newsletter-input {
+    background: rgba(255,255,255,0.9);
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s;
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: #e67e22;
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
+    transform: scale(1.02);
+}
+
+/* Dark mode */
+.dark-mode {
+    background-color: #1a1a2e;
+    color: #eee;
+}
+
+.dark-mode .bg-white {
+    background-color: #16213e !important;
+}
+
+.dark-mode .text-gray-800 {
+    color: #eee !important;
+}
+
+.dark-mode .text-gray-700 {
+    color: #ccc !important;
+}
+
+.dark-mode .bg-gray-50 {
+    background-color: #1a1a2e !important;
+}
+
+.dark-mode .bg-\[\#f5f2eb\] {
+    background-color: #1a1a2e !important;
+}
+
+.dark-mode .bg-\[\#fdf6ef\] {
+    background-color: #1a1a2e !important;
+}
+
+.dark-mode .border-gray-100 {
+    border-color: #333 !important;
+}
+
+.dark-mode .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5);
+}
+
+/* Gallery images */
+.gallery-img {
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.gallery-img:hover {
+    opacity: 0.85;
+    transform: scale(1.08);
+}
+
+/* Loading animation */
+.loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #e67e22;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Footer links */
+.footer-link {
+    transition: all 0.3s;
+}
+
+.footer-link:hover {
+    color: #f39c12;
+    transform: translateX(5px);
+}
+
+/* Button primary */
+.btn-primary {
+    background: #e67e22;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #d35400;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(230, 126, 34, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* Floating animation for elements */
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Gradient text */
+.gradient-text {
+    background: linear-gradient(135deg, #e67e22, #f1c40f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Service card icon hover */
+.service-icon {
+    transition: all 0.4s;
+}
+
+.card-hover:hover .service-icon {
+    transform: rotateY(180deg);
+}
+
+/* 24/7 badge pulse */
+.badge-pulse {
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+/* Counter animation */
+.counter {
+    animation: countUp 2s ease-out;
+}
+
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

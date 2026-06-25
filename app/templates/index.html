@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section - Uganda Focus -->
+<section class="min-h-[85vh] flex items-center justify-center text-white px-4 relative overflow-hidden" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1400&q=80'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-[#e67e22]/10 animate-pulse"></div>
+    <div class="text-center max-w-4xl relative z-10">
+        <div class="animate__animated animate__fadeInDown">
+            <span class="inline-block bg-[#e67e22] text-white px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                <i class="fas fa-clock mr-2"></i> Available 24/7
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight"><i>
+                Your Trusted <br><span class="text-[#f1c40f]">Travel Partner</span> in Kampala Uganda
+            </i>
+            </h1>
+            <p class="text-xl md:text-2xl mt-4 opacity-95 font-light">
+                Airport Pickups • Hotel Bookings • Car Hire • Town Tours
+            </p>
+        </div>
+        <div class="mt-8 flex flex-wrap justify-center gap-4 animate__animated animate__fadeInUp">
+            <a href="/services" class="bg-[#e67e22] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#d35400] transition transform hover:scale-105 inline-flex items-center gap-2 shadow-lg">
+                Our Services <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="/contact" class="bg-white/20 backdrop-blur-sm border border-white/30 px-8 py-4 rounded-full text-lg font-medium hover:bg-white/30 transition transform hover:scale-105 inline-flex items-center gap-2">
+                Contact Us <i class="fas fa-headset"></i>
+            </a>
+        </div>
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#f1c40f]"></i> Airport Pickup</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#f1c40f]"></i> Hotel Reservations</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#f1c40f]"></i> Car Hire</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#f1c40f]"></i> City Tours</div>
+        </div>
+    </div>
+    <!-- Animated scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <i class="fas fa-chevron-down text-2xl text-white/60"></i>
+    </div>
+</section>
+
+<!-- Quick Stats -->
+<section class="bg-[#2c3e50] text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <div class="animate__animated animate__fadeIn">
+            <div class="text-3xl font-bold text-[#f1c40f]">10+</div>
+            <div class="text-sm opacity-80">Years Experience</div>
+        </div>
+        <div class="animate__animated animate__fadeIn animate__delay-1s">
+            <div class="text-3xl font-bold text-[#f1c40f]">500+</div>
+            <div class="text-sm opacity-80">Happy Travelers</div>
+        </div>
+        <div class="animate__animated animate__fadeIn animate__delay-2s">
+            <div class="text-3xl font-bold text-[#f1c40f]">24/7</div>
+            <div class="text-sm opacity-80">Service Available</div>
+        </div>
+        <div class="animate__animated animate__fadeIn animate__delay-3s">
+            <div class="text-3xl font-bold text-[#f1c40f]">100%</div>
+            <div class="text-sm opacity-80">Satisfaction Rate</div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Overview -->
+<section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="text-center animate__animated animate__fadeIn">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800">🚐 Our Services in Kampala</h2>
+        <p class="text-gray-600 mt-2">Reliable transport and travel services across Uganda</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+        <div class="bg-white p-6 rounded-2xl shadow-lg text-center card-hover animate__animated animate__fadeInUp">
+            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
+                <i class="fas fa-plane-departure text-3xl text-[#e67e22]"></i>
+            </div>
+            <h3 class="text-xl font-bold mt-3">Airport Pickup</h3>
+            <p class="text-gray-600 text-sm mt-2">Reliable pickup from Entebbe Airport</p>
+            <a href="/services" class="inline-block mt-3 text-[#e67e22] font-semibold hover:underline">Learn More →</a>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-lg text-center card-hover animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
+                <i class="fas fa-hotel text-3xl text-[#e67e22]"></i>
+            </div>
+            <h3 class="text-xl font-bold mt-3">Hotel Reservations</h3>
+            <p class="text-gray-600 text-sm mt-2">Book the best hotels in Kampala</p>
+            <a href="/services" class="inline-block mt-3 text-[#e67e22] font-semibold hover:underline">Learn More →</a>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-lg text-center card-hover animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
+                <i class="fas fa-car text-3xl text-[#e67e22]"></i>
+            </div>
+            <h3 class="text-xl font-bold mt-3">Car Hire</h3>
+            <p class="text-gray-600 text-sm mt-2">Reliable vehicles for hire</p>
+            <a href="/services" class="inline-block mt-3 text-[#e67e22] font-semibold hover:underline">Learn More →</a>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-lg text-center card-hover animate__animated animate__fadeInUp animate__delay-3s">
+            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
+                <i class="fas fa-city text-3xl text-[#e67e22]"></i>
+            </div>
+            <h3 class="text-xl font-bold mt-3">Town Tours</h3>
+            <p class="text-gray-600 text-sm mt-2">Explore Kampala city tours</p>
+            <a href="/services" class="inline-block mt-3 text-[#e67e22] font-semibold hover:underline">Learn More →</a>
+        </div>
+    </div>
+</section>
+
+<!-- About Preview -->
+<section class="max-w-7xl mx-auto px-4 py-8">
+    <div class="bg-gradient-to-r from-[#f5f2eb] to-[#fdf6ef] rounded-3xl p-8 md:p-12">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="animate__animated animate__fadeInLeft">
+                <h2 class="text-3xl font-bold text-gray-800">🌟 About ROBETS TRAVEL AGENTS</h2>
+                <p class="text-gray-600 mt-4 leading-relaxed">
+                    Based in Kampala, Uganda, ROBETS TRAVEL AGENTS is your trusted partner for all travel needs. 
+                    We specialize in airport pickups, hotel reservations, car hire, and guided town tours for 
+                    individuals, families, and foreigners visiting Uganda.
+                </p>
+                <div class="mt-4 grid grid-cols-2 gap-2">
+                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#e67e22]"></i> Airport Transfers</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#e67e22]"></i> Hotel Bookings</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#e67e22]"></i> Car Rental</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#e67e22]"></i> City Tours</div>
+                </div>
+                <a href="/about" class="inline-block mt-6 bg-[#e67e22] text-white px-8 py-3 rounded-full hover:bg-[#d35400] transition transform hover:scale-105">
+                    Read Our Story <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="grid grid-cols-2 gap-4 animate__animated animate__fadeInRight">
+                <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=400&q=80" alt="Uganda" class="rounded-2xl h-48 w-full object-cover shadow-lg hover:scale-105 transition">
+                <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&q=80" alt="Kampala" class="rounded-2xl h-48 w-full object-cover shadow-lg hover:scale-105 transition mt-8">
+                <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=400&q=80" alt="Uganda" class="rounded-2xl h-48 w-full object-cover shadow-lg hover:scale-105 transition -mt-8">
+                <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&q=80" alt="Kampala" class="rounded-2xl h-48 w-full object-cover shadow-lg hover:scale-105 transition">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="bg-[#2c3e50] text-white py-16">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold">🌟 Why Choose ROBETS TRAVEL AGENTS</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+            <div class="animate__animated animate__fadeInUp">
+                <i class="fas fa-clock text-4xl text-[#f1c40f]"></i>
+                <h4 class="font-bold mt-2">24/7 Service</h4>
+                <p class="text-sm opacity-80">Always available when you need us</p>
+            </div>
+            <div class="animate__animated animate__fadeInUp animate__delay-1s">
+                <i class="fas fa-shield-alt text-4xl text-[#f1c40f]"></i>
+                <h4 class="font-bold mt-2">Safety First</h4>
+                <p class="text-sm opacity-80">Professional & reliable service</p>
+            </div>
+            <div class="animate__animated animate__fadeInUp animate__delay-2s">
+                <i class="fas fa-users text-4xl text-[#f1c40f]"></i>
+                <h4 class="font-bold mt-2">Local Experts</h4>
+                <p class="text-sm opacity-80">We know Kampala & Uganda well</p>
+            </div>
+            <div class="animate__animated animate__fadeInUp animate__delay-3s">
+                <i class="fas fa-hand-holding-heart text-4xl text-[#f1c40f]"></i>
+                <h4 class="font-bold mt-2">Personalized Service</h4>
+                <p class="text-sm opacity-80">Tailored to your needs</p>
+            </div>
+        </div>
+        <a href="/about" class="inline-block mt-10 bg-[#e67e22] text-white px-8 py-3 rounded-full hover:bg-[#d35400] transition transform hover:scale-105">
+            Learn More About Us <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center text-gray-800">💬 What Our Travelers Say</h2>
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+        <div class="bg-white p-6 rounded-2xl shadow-lg transform hover:scale-105 transition">
+            <i class="fas fa-star text-[#f1c40f]"></i><i class="fas fa-star text-[#f1c40f]"></i><i class="fas fa-star text-[#f1c40f]"></i><i class="fas fa-star text-[#f1c40f]"></i><i class="fas fa-star text-[#f1c40f]"></i>
+            <p class="mt-2 italic">“Excellent service! They picked me up from the airport and helped with hotel booking. Highly recommend!”</p>
+            <div class="flex items-center mt-4"><span class="font-bold">— Sarah K.</span><span class="text-sm text-gray-500 ml-2">(USA)</span></div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-lg transform hover:scale-105 transition">
+            <i class="fas fa-star text-[#f1c40f]"></i><i class="fas fa-star text-[#f1c40f]"></i><i class="fas fa-star text-[#f1c40f]"></i><i class="fas fa-star text-[#f1c40f]"></i><i class="fas fa-star text-[#f1c40f]"></i>
+            <p class="mt-2 italic">“Great car hire service. The vehicle was clean and well-maintained. Perfect for exploring Kampala.”</p>
+            <div class="flex items-center mt-4"><span class="font-bold">— James M.</span><span class="text-sm text-gray-500 ml-2">(UK)</span></div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-lg transform hover:scale-105 transition">
+            <i class="fas fa-star text-[#f1c40f]"></i><i class="fas fa-star text-[#f1c40f]"></i><i class="fas fa-star text-[#f1c40f]"></i><i class="fas fa-star text-[#f1c40f]"></i><i class="fas fa-star text-[#f1c40f]"></i>
+            <p class="mt-2 italic">“Professional and reliable. They made our family trip to Uganda stress-free and memorable.”</p>
+            <div class="flex items-center mt-4"><span class="font-bold">— Emily R.</span><span class="text-sm text-gray-500 ml-2">(Canada)</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- 24/7 Call to Action -->
+<section class="max-w-4xl mx-auto px-4 py-8 text-center">
+    <div class="bg-gradient-to-r from-[#e67e22] to-[#d35400] rounded-3xl p-12 text-white transform hover:scale-105 transition">
+        <div class="flex items-center justify-center gap-3 mb-4">
+            <i class="fas fa-clock text-4xl animate-pulse"></i>
+            <h2 class="text-3xl font-bold">Available 24/7</h2>
+        </div>
+        <p class="text-lg opacity-95">Need a ride, hotel booking, or tour in Kampala?</p>
+        <p class="text-xl font-bold mt-2">Call us anytime: +256 700 123 456</p>
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+            <a href="tel:+256700123456" class="bg-white text-[#e67e22] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105">
+                <i class="fas fa-phone mr-2"></i> Call Now
+            </a>
+            <a href="/contact" class="bg-transparent border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition transform hover:scale-105">
+                Contact Us
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter -->
+<section class="py-12 bg-[#f5f2eb]">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-gray-800">📬 Stay Updated</h2>
+        <p class="text-gray-600 mb-4">Subscribe for travel tips and offers in Uganda</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <input type="email" placeholder="Your email" class="px-6 py-3 rounded-full text-gray-800 w-full sm:w-72 border-2 border-gray-300 focus:outline-none focus:border-[#e67e22]">
+            <button class="bg-[#e67e22] text-white px-8 py-3 rounded-full font-bold hover:bg-[#d35400] transition transform hover:scale-105">
+                Subscribe
+            </button>
+        </div>
+    </div>
+</section>
+{% endblock %}
