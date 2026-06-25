@@ -2,13 +2,422 @@
 
 {% block content %}
 <section class="max-w-7xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold text-center text-gray-800">📸 Gallery</h1>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
-        {% for i in range(8) %}
-        <div class="gallery-item overflow-hidden rounded-lg shadow-md">
-            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&q=80" alt="Safari Image" class="w-full h-48 object-cover gallery-img">
-        </div>
-        {% endfor %}
+    <!-- Page Header -->
+    <div class="text-center animate__animated animate__fadeIn">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800">📸 Our Gallery</h1>
+        <p class="text-gray-600 mt-2 text-lg">Explore moments from our travels and services in Uganda</p>
+        <p class="text-gray-500 text-sm mt-1">Click any image to view full screen</p>
     </div>
+
+    <!-- Category Filters -->
+    <div class="flex flex-wrap justify-center gap-2 mt-8 animate__animated animate__fadeIn">
+        <button onclick="filterGallery('all')" class="filter-btn active px-4 py-2 bg-[#e67e22] text-white rounded-full hover:bg-[#d35400] transition">
+            <i class="fas fa-th"></i> All
+        </button>
+        <button onclick="filterGallery('airport')" class="filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 transition">
+            <i class="fas fa-plane"></i> Airport
+        </button>
+        <button onclick="filterGallery('tours')" class="filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 transition">
+            <i class="fas fa-safari"></i> Tours
+        </button>
+        <button onclick="filterGallery('hotels')" class="filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 transition">
+            <i class="fas fa-hotel"></i> Hotels
+        </button>
+        <button onclick="filterGallery('cars')" class="filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 transition">
+            <i class="fas fa-car"></i> Car Hire
+        </button>
+        <button onclick="filterGallery('kampala')" class="filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 transition">
+            <i class="fas fa-city"></i> Kampala
+        </button>
+        <button onclick="filterGallery('wildlife')" class="filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 transition">
+            <i class="fas fa-paw"></i> Wildlife
+        </button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8" id="galleryGrid">
+        
+        <!-- ==================== AIRPORT CATEGORY ==================== -->
+        
+        <div class="gallery-item category-airport animate__animated animate__fadeInUp">
+            <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1556629812-e0594acc6edc?w=600&q=80" alt="Entebbe Airport" class="w-full h-56 object-cover gallery-img">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="w-full">
+                        <p class="text-white font-bold text-sm">🛫 Entebbe Airport Pickup</p>
+                        <p class="text-white/80 text-xs mt-1">Reliable airport transfers 24/7. We track your flight and ensure timely pickup.</p>
+                        <span class="inline-block mt-2 bg-[#e67e22] text-white text-xs px-2 py-0.5 rounded">Airport</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item category-airport animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?w=600&q=80" alt="Airport Vehicle" class="w-full h-56 object-cover gallery-img">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="w-full">
+                        <p class="text-white font-bold text-sm">🚐 Comfortable Airport Vehicles</p>
+                        <p class="text-white/80 text-xs mt-1">Clean, air-conditioned vehicles with professional drivers for your airport transfer.</p>
+                        <span class="inline-block mt-2 bg-[#e67e22] text-white text-xs px-2 py-0.5 rounded">Airport</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item category-airport animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1583184247570-ecf8d7c2f039?w=600&q=80" alt="Airport Drop-off" class="w-full h-56 object-cover gallery-img">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="w-full">
+                        <p class="text-white font-bold text-sm">🛬 Airport Drop-off Service</p>
+                        <p class="text-white/80 text-xs mt-1">We ensure you reach Entebbe Airport on time for your departure. Available 24/7.</p>
+                        <span class="inline-block mt-2 bg-[#e67e22] text-white text-xs px-2 py-0.5 rounded">Airport</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TOURS CATEGORY ==================== -->
+        
+        <div class="gallery-item category-tours animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=80" alt="Gorilla Trekking" class="w-full h-56 object-cover gallery-img">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="w-full">
+                        <p class="text-white font-bold text-sm">🦍 Gorilla Trekking Experience</p>
+                        <p class="text-white/80 text-xs mt-1">An unforgettable journey to see mountain gorillas in Bwindi Impenetrable Forest.</p>
+                        <span class="inline-block mt-2 bg-[#e67e22] text-white text-xs px-2 py-0.5 rounded">Tours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item category-tours animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80" alt="Murchison Falls" class="w-full h-56 object-cover gallery-img">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="w-full">
+                        <p class="text-white font-bold text-sm">🌊 Murchison Falls Safari</p>
+                        <p class="text-white/80 text-xs mt-1">Witness the mighty Nile River and powerful Murchison Falls on our guided safari tours.</p>
+                        <span class="inline-block mt-2 bg-[#e67e22] text-white text-xs px-2 py-0.5 rounded">Tours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item category-tours animate__animated animate__fadeInUp animate__delay-3s">
+            <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=80" alt="Queen Elizabeth" class="w-full h-56 object-cover gallery-img">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="w-full">
+                        <p class="text-white font-bold text-sm">🦁 Queen Elizabeth National Park</p>
+                        <p class="text-white/80 text-xs mt-1">Explore tree-climbing lions, hippos, and over 600 bird species in Uganda's top park.</p>
+                        <span class="inline-block mt-2 bg-[#e67e22] text-white text-xs px-2 py-0.5 rounded">Tours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== HOTELS CATEGORY ==================== -->
+        
+        <div class="gallery-item category-hotels animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80" alt="Luxury Hotel" class="w-full h-56 object-cover gallery-img">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="w-full">
+                        <p class="text-white font-bold text-sm">🏨 Premium Hotel Accommodation</p>
+                        <p class="text-white/80 text-xs mt-1">We book the best hotels and lodges in Kampala and across Uganda at competitive rates.</p>
+                        <span class="inline-block mt-2 bg-[#e67e22] text-white text-xs px-2 py-0.5 rounded">Hotels</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item category-hotels animate__animated animate__fadeInUp animate__delay-3s">
+            <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&q=80" alt="Hotel Room" class="w-full h-56 object-cover gallery-img">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="w-full">
+                        <p class="text-white font-bold text-sm">🛏️ Comfortable Hotel Rooms</p>
+                        <p class="text-white/80 text-xs mt-1">We ensure you get the best rooms with great views and excellent service.</p>
+                        <span class="inline-block mt-2 bg-[#e67e22] text-white text-xs px-2 py-0.5 rounded">Hotels</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== CAR HIRE CATEGORY ==================== -->
+        
+        <div class="gallery-item category-cars animate__animated animate__fadeInUp animate__delay-3s">
+            <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?w=600&q=80" alt="Car Hire" class="w-full h-56 object-cover gallery-img">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="w-full">
+                        <p class="text-white font-bold text-sm">🚗 Reliable Car Hire</p>
+                        <p class="text-white/80 text-xs mt-1">Well-maintained vehicles for hire. Perfect for exploring Kampala and beyond.</p>
+                        <span class="inline-block mt-2 bg-[#e67e22] text-white text-xs px-2 py-0.5 rounded">Car Hire</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item category-cars animate__animated animate__fadeInUp animate__delay-4s">
+            <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80" alt="Luxury Car" class="w-full h-56 object-cover gallery-img">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="w-full">
+                        <p class="text-white font-bold text-sm">🚙 Premium Vehicle Fleet</p>
+                        <p class="text-white/80 text-xs mt-1">Choose from a range of vehicles including SUVs, sedans, and vans for groups.</p>
+                        <span class="inline-block mt-2 bg-[#e67e22] text-white text-xs px-2 py-0.5 rounded">Car Hire</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== KAMPALA CATEGORY ==================== -->
+        
+        <div class="gallery-item category-kampala animate__animated animate__fadeInUp animate__delay-4s">
+            <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1558904541-ef843a2f6a98?w=600&q=80" alt="Kampala City" class="w-full h-56 object-cover gallery-img">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="w-full">
+                        <p class="text-white font-bold text-sm">🏙️ Kampala City Tours</p>
+                        <p class="text-white/80 text-xs mt-1">Explore the vibrant capital of Uganda with our guided city tours. Visit key landmarks.</p>
+                        <span class="inline-block mt-2 bg-[#e67e22] text-white text-xs px-2 py-0.5 rounded">Kampala</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item category-kampala animate__animated animate__fadeInUp animate__delay-5s">
+            <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Kampala Culture" class="w-full h-56 object-cover gallery-img">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="w-full">
+                        <p class="text-white font-bold text-sm">🎭 Local Cultural Experiences</p>
+                        <p class="text-white/80 text-xs mt-1">Connect with local communities and experience authentic Ugandan culture.</p>
+                        <span class="inline-block mt-2 bg-[#e67e22] text-white text-xs px-2 py-0.5 rounded">Kampala</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== WILDLIFE CATEGORY ==================== -->
+        
+        <div class="gallery-item category-wildlife animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1518020382114-d5ba90c1963b?w=600&q=80" alt="Wildlife" class="w-full h-56 object-cover gallery-img">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="w-full">
+                        <p class="text-white font-bold text-sm">🐘 Uganda Wildlife Safari</p>
+                        <p class="text-white/80 text-xs mt-1">Experience Uganda's incredible wildlife including elephants, lions, and more.</p>
+                        <span class="inline-block mt-2 bg-[#e67e22] text-white text-xs px-2 py-0.5 rounded">Wildlife</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item category-wildlife animate__animated animate__fadeInUp animate__delay-3s">
+            <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=80" alt="Bird Watching" class="w-full h-56 object-cover gallery-img">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <div class="w-full">
+                        <p class="text-white font-bold text-sm">🐦 Bird Watching Tours</p>
+                        <p class="text-white/80 text-xs mt-1">Uganda is a bird lover's paradise with over 1,000 species to discover.</p>
+                        <span class="inline-block mt-2 bg-[#e67e22] text-white text-xs px-2 py-0.5 rounded">Wildlife</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- No Images Message -->
+    <div id="noImagesMessage" class="text-center py-12 hidden">
+        <i class="fas fa-images text-6xl text-gray-300"></i>
+        <p class="text-gray-500 mt-4">No images found in this category</p>
+        <p class="text-gray-400 text-sm mt-2">Check other categories</p>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="mt-16 text-center bg-gradient-to-r from-[#e67e22] to-[#d35400] rounded-3xl p-8 text-white animate__animated animate__fadeInUp">
+        <h2 class="text-2xl font-bold">🚐 Plan Your Ugandan Adventure</h2>
+        <p class="mt-2 opacity-90">Let us take you to these amazing places!</p>
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+            <a href="/contact" class="bg-white text-[#e67e22] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105">
+                <i class="fas fa-envelope mr-2"></i> Contact Us
+            </a>
+            <a href="/services" class="bg-transparent border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition transform hover:scale-105">
+                <i class="fas fa-info-circle mr-2"></i> Our Services
+            </a>
+        </div>
+    </div>
+
 </section>
+
+<!-- ==================== LIGHTBOX ==================== -->
+<div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden items-center justify-center p-4" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 transition z-10">
+        <i class="fas fa-times"></i>
+    </button>
+    <button onclick="prevImage()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl hover:text-gray-300 transition z-10">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button onclick="nextImage()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl hover:text-gray-300 transition z-10">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+    <img id="lightboxImage" src="" alt="Gallery Image" class="max-h-[80vh] max-w-[90vw] object-contain rounded-lg shadow-2xl">
+    <div id="lightboxCaption" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white text-center bg-black/60 px-6 py-3 rounded-2xl max-w-2xl">
+        <p id="lightboxTitle" class="font-bold text-lg"></p>
+        <p id="lightboxDescription" class="text-sm opacity-90"></p>
+        <span id="lightboxCategory" class="inline-block mt-1 bg-[#e67e22] text-white text-xs px-3 py-1 rounded-full"></span>
+    </div>
+</div>
+
+<script>
+    // Gallery items
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    let currentIndex = 0;
+    const visibleItems = [];
+
+    // Filter function
+    function filterGallery(category) {
+        // Update active button
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('bg-[#e67e22]', 'text-white');
+            btn.classList.add('bg-gray-200', 'text-gray-700');
+        });
+        if (event && event.target) {
+            event.target.classList.remove('bg-gray-200', 'text-gray-700');
+            event.target.classList.add('bg-[#e67e22]', 'text-white');
+        }
+
+        let visibleCount = 0;
+        galleryItems.forEach(item => {
+            if (category === 'all' || item.classList.contains(`category-${category}`)) {
+                item.style.display = 'block';
+                visibleCount++;
+                // Add animation delay
+                const delay = Math.random() * 0.5;
+                item.style.animationDelay = `${delay}s`;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        const message = document.getElementById('noImagesMessage');
+        if (visibleCount === 0) {
+            message.classList.remove('hidden');
+        } else {
+            message.classList.add('hidden');
+        }
+    }
+
+    // Lightbox functions
+    function openLightbox(element) {
+        const img = element.querySelector('img');
+        const titleEl = element.querySelector('.text-white.font-bold');
+        const descEl = element.querySelector('.text-white\/80.text-xs');
+        const categoryEl = element.querySelector('.bg-\\[\\#e67e22\\]');
+        
+        const lightbox = document.getElementById('lightbox');
+        document.getElementById('lightboxImage').src = img.src;
+        document.getElementById('lightboxTitle').textContent = titleEl ? titleEl.textContent : 'ROBETS TRAVEL AGENTS';
+        document.getElementById('lightboxDescription').textContent = descEl ? descEl.textContent : '';
+        document.getElementById('lightboxCategory').textContent = categoryEl ? categoryEl.textContent : 'Travel';
+        
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+
+        // Update visible items
+        visibleItems.length = 0;
+        document.querySelectorAll('.gallery-item[style*="display: block"]').forEach(item => {
+            visibleItems.push(item);
+        });
+        if (visibleItems.length === 0) {
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                visibleItems.push(item);
+            });
+        }
+        currentIndex = visibleItems.indexOf(element);
+        if (currentIndex === -1) currentIndex = 0;
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+
+    function prevImage() {
+        if (visibleItems.length === 0) return;
+        currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+        updateLightboxImage(visibleItems[currentIndex]);
+    }
+
+    function nextImage() {
+        if (visibleItems.length === 0) return;
+        currentIndex = (currentIndex + 1) % visibleItems.length;
+        updateLightboxImage(visibleItems[currentIndex]);
+    }
+
+    function updateLightboxImage(element) {
+        const img = element.querySelector('img');
+        const titleEl = element.querySelector('.text-white.font-bold');
+        const descEl = element.querySelector('.text-white\/80.text-xs');
+        const categoryEl = element.querySelector('.bg-\\[\\#e67e22\\]');
+        
+        document.getElementById('lightboxImage').src = img.src;
+        document.getElementById('lightboxTitle').textContent = titleEl ? titleEl.textContent : 'ROBETS TRAVEL AGENTS';
+        document.getElementById('lightboxDescription').textContent = descEl ? descEl.textContent : '';
+        document.getElementById('lightboxCategory').textContent = categoryEl ? categoryEl.textContent : 'Travel';
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (document.getElementById('lightbox').classList.contains('hidden')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'ArrowRight') nextImage();
+    });
+
+    console.log('📸 ROBETS TRAVEL AGENTS Gallery loaded!');
+</script>
+
+<style>
+    .gallery-item {
+        transition: all 0.4s ease;
+    }
+    .gallery-item:hover {
+        transform: scale(1.03);
+    }
+    .filter-btn {
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    .filter-btn:hover {
+        transform: scale(1.05);
+    }
+    .filter-btn.active {
+        background: #e67e22;
+        color: white;
+    }
+    #lightbox {
+        transition: opacity 0.3s ease;
+    }
+    #lightboxImage {
+        animation: zoomIn 0.3s ease;
+    }
+    @keyframes zoomIn {
+        from { transform: scale(0.8); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+    .gallery-img {
+        transition: transform 0.5s ease;
+    }
+    .group:hover .gallery-img {
+        transform: scale(1.1);
+    }
+</style>
 {% endblock %}
