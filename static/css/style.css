@@ -208,3 +208,62 @@ html {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* This is important - mobile menu hidden by default */
+#mobile-menu {
+    display: none;
+}
+#mobile-menu.show {
+    display: block;
+}
+
+    /* Google Fonts are loaded in the head */
+    
+    /* Font Classes */
+    .font-playfair {
+        font-family: 'Playfair Display', serif;
+    }
+    .font-caveat {
+        font-family: 'Caveat', cursive;
+    }
+    .font-inter {
+        font-family: 'Inter', sans-serif;
+    }
+    
+    /* Text Shadow for better readability */
+    .drop-shadow-lg {
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Animated gradient text (optional) */
+    .gradient-text {
+        background: linear-gradient(135deg, #f1c40f, #e67e22, #f1c40f);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientShift 4s ease-in-out infinite;
+    }
+    
+    @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+    /* Float animation for decorative elements */
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    /* Glow animation for text */
+    @keyframes glow {
+        0%, 100% { text-shadow: 0 0 20px rgba(241, 196, 15, 0.3); }
+        50% { text-shadow: 0 0 40px rgba(241, 196, 15, 0.6), 0 0 60px rgba(241, 196, 15, 0.3); }
+    }
+    .animate-glow {
+        animation: glow 3s ease-in-out infinite;
+    }

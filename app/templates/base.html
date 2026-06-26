@@ -7,9 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <!-- Animate.css for animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=Caveat:wght@400;600;700&family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         .nav-link {
             padding: 0.5rem 0.75rem;
@@ -17,8 +15,7 @@
             transition: all 0.2s ease;
             border-radius: 0.5rem;
             position: relative;
-            color: 1f2937;
-
+            color: #1f2937;
         }
         .nav-link:hover {
             color: #e67e22;
@@ -27,23 +24,6 @@
         .nav-link.active {
             color: #e67e22;
         }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: #e67e22;
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-        .nav-link:hover::after {
-            width: 60%;
-        }
-        .nav-link.active::after {
-            width: 60%;
-        }
         .mobile-nav-link {
             display: block;
             padding: 0.75rem 1rem;
@@ -51,16 +31,45 @@
             transition: all 0.2s ease;
             border-radius: 0.5rem;
             border-bottom: 1px solid #f3f4f6;
+            color: #1f2937;
         }
         .mobile-nav-link:hover {
             color: #e67e22;
             background-color: rgba(230, 126, 34, 0.1);
-            transform: translateX(5px);
         }
         .mobile-nav-link:last-child {
             border-bottom: none;
         }
-        /* Floating WhatsApp pulse animation */
+
+        /* Dark mode */
+        body.dark-mode .nav-link {
+            color: #e5e7eb !important;
+        }
+        body.dark-mode .nav-link:hover {
+            color: #e67e22 !important;
+            background-color: rgba(230, 126, 34, 0.15) !important;
+        }
+        body.dark-mode .nav-link.active {
+            color: #e67e22 !important;
+        }
+        body.dark-mode .mobile-nav-link {
+            color: #e5e7eb !important;
+            border-bottom-color: #374151 !important;
+        }
+        body.dark-mode #mobile-menu {
+            background-color: #1f2937 !important;
+        }
+        body.dark-mode .text-gray-700,
+        body.dark-mode .text-gray-800 {
+            color: #e5e7eb !important;
+        }
+        body.dark-mode .bg-white\/95 {
+            background-color: #1a1a2e !important;
+        }
+        body.dark-mode .border-gray-100 {
+            border-color: #374151 !important;
+        }
+        
         .whatsapp-float {
             animation: pulse 2s infinite;
         }
@@ -69,7 +78,6 @@
             70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
-        /* 24/7 badge pulse */
         .badge-pulse {
             animation: badgePulse 2s ease-in-out infinite;
         }
@@ -77,115 +85,124 @@
             0%, 100% { opacity: 1; transform: scale(1); }
             50% { opacity: 0.7; transform: scale(1.05); }
         }
+
+        /* Mobile menu hidden by default */
+        #mobile-menu {
+            display: none;
+        }
+        #mobile-menu.show {
+            display: block;
+        }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 top-0 dark-mode-nav">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-            <!-- Logo -->
-            <div class="flex items-center space-x-2">
-                <a href="/" class="flex items-center space-x-2 hover:opacity-80 transition">
-                    <i class="fas fa-car-side text-2xl text-[#e67e22]"></i>
-                    <div class="flex flex-col leading-tight">
-                        <span class="font-bold text-lg text-gray-800 dark:text-gray-200">ROBETS</span>
-                        <span class="text-xs text-[#e67e22] font-semibold">TRAVEL AGENTS</span>
-                    </div>
-                </a>
-                <span class="ml-2 bg-[#e67e22] text-white text-[10px] px-2 py-1 rounded-full font-bold badge-pulse">
-                    <i class="fas fa-clock mr-1"></i> 24/7
-                </span>
-            </div>
+    <!-- NAVBAR -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <a href="/" class="flex items-center space-x-2 hover:opacity-80 transition">
+                        <i class="fas fa-car-side text-2xl text-[#e67e22]"></i>
+                        <div class="flex flex-col leading-tight">
+                            <span class="font-bold text-lg text-gray-800">ROBETS</span>
+                            <span class="text-xs text-[#e67e22] font-semibold">TRAVEL AGENTS</span>
+                        </div>
+                    </a>
+                    <span class="ml-2 bg-[#e67e22] text-white text-[10px] px-2 py-1 rounded-full font-bold badge-pulse">
+                        <i class="fas fa-clock mr-1"></i> 24/7
+                    </span>
+                </div>
 
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center space-x-1">
-                <a href="/" class="nav-link {% if page == 'home' %}active{% endif %}">Home</a>
-                <a href="/about" class="nav-link {% if page == 'about' %}active{% endif %}">About</a>
-                <a href="/services" class="nav-link {% if page == 'services' %}active{% endif %}">Services</a>
-                <a href="/tours" class="nav-link {% if page == 'tours' %}active{% endif %}">Tours</a>
-                <a href="/gallery" class="nav-link {% if page == 'gallery' %}active{% endif %}">Gallery</a>
-                <a href="/blog" class="nav-link {% if page == 'blog' %}active{% endif %}">About Owner</a>
-                <a href="/contact" class="nav-link {% if page == 'contact' %}active{% endif %}">Contact</a>
-            </div>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="/" class="nav-link {% if page == 'home' %}active{% endif %}">Home</a>
+                    <a href="/about" class="nav-link {% if page == 'about' %}active{% endif %}">About</a>
+                    <a href="/services" class="nav-link {% if page == 'services' %}active{% endif %}">Services</a>
+                    <a href="/gallery" class="nav-link {% if page == 'gallery' %}active{% endif %}">Gallery</a>
+                    <a href="/blog" class="nav-link {% if page == 'blog' %}active{% endif %}">About Owner</a>
+                    <a href="/contact" class="nav-link {% if page == 'contact' %}active{% endif %}">Contact</a>
+                </div>
 
-            <!-- Right side buttons -->
-            <div class="flex items-center space-x-3">
-                <a href="tel:+256700123456" class="hidden md:flex items-center gap-2 text-sm font-medium text-[#e67e22] hover:text-[#d35400] transition px-3 py-2 rounded-lg hover:bg-orange-50 dark:text-[#f39c12] dark:hover:bg-orange-900/20">
-                    <i class="fas fa-phone"></i> Call Now
-                </a>
-                <span class="dark-mode-toggle text-gray-600 hover:text-[#e67e22] text-xl cursor-pointer dark:text-gray-300 dark:hover:text-[#e67e22]">
-                    <i class="fas fa-moon"></i>
-                </span>
-                <a href="/login" class="hidden md:block text-sm font-medium text-gray-700 hover:text-[#e67e22] transition px-3 py-2 rounded-lg hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10 dark:hover:text-[#e67e22]">
-                    Log in
-                </a>
-                <a href="/register" class="hidden md:block bg-[#e67e22] text-white px-5 py-2 rounded-full text-sm font-semibold shadow hover:bg-[#d35400] transition transform hover:scale-105">
-                    Sign up
-                </a>
-                <button id="mobile-menu-btn" class="md:hidden text-gray-700 text-2xl focus:outline-none hover:text-[#e67e22] transition p-2 rounded-lg hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <!-- Right buttons -->
+                <div class="flex items-center space-x-3">
+                    <a href="tel:+256700123456" class="hidden md:flex items-center gap-2 text-sm font-medium text-[#e67e22] hover:text-[#d35400] transition px-3 py-2 rounded-lg hover:bg-orange-50">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                    <span class="dark-mode-toggle text-gray-600 hover:text-[#e67e22] text-xl cursor-pointer">
+                        <i class="fas fa-moon"></i>
+                    </span>
+                    <a href="/login" class="hidden md:block text-sm font-medium text-gray-700 hover:text-[#e67e22] transition px-3 py-2 rounded-lg hover:bg-gray-100">
+                        Log in
+                    </a>
+                    <a href="/register" class="hidden md:block bg-[#e67e22] text-white px-5 py-2 rounded-full text-sm font-semibold shadow hover:bg-[#d35400] transition transform hover:scale-105">
+                        Sign up
+                    </a>
+                    <!-- MOBILE MENU BUTTON -->
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-700 text-2xl focus:outline-none hover:text-[#e67e22] transition p-2 rounded-lg hover:bg-gray-100">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100 shadow-lg dark:bg-gray-800 dark:border-gray-700">
-        <div class="px-4 py-2 space-y-1">
-            <a href="/" class="mobile-nav-link {% if page == 'home' %}text-[#e67e22]{% endif %} dark:text-gray-200 dark:hover:text-[#e67e22]">
-                <i class="fas fa-home w-6"></i> Home
-            </a>
-            <a href="/about" class="mobile-nav-link {% if page == 'about' %}text-[#e67e22]{% endif %} dark:text-gray-200 dark:hover:text-[#e67e22]">
-                <i class="fas fa-info-circle w-6"></i> About
-            </a>
-            <a href="/services" class="mobile-nav-link {% if page == 'services' %}text-[#e67e22]{% endif %} dark:text-gray-200 dark:hover:text-[#e67e22]">
-                <i class="fas fa-concierge-bell w-6"></i> Services
-            </a>
-            <a href="/tours" class="mobile-nav-link {% if page == 'tours' %}text-[#e67e22]{% endif %} dark:text-gray-200 dark:hover:text-[#e67e22]">
-                <i class="fas fa-safari w-6"></i> Tours
-            </a>
-            <a href="/gallery" class="mobile-nav-link {% if page == 'gallery' %}text-[#e67e22]{% endif %} dark:text-gray-200 dark:hover:text-[#e67e22]">
-                <i class="fas fa-images w-6"></i> Gallery
-            </a>
-            <a href="/blog" class="mobile-nav-link {% if page == 'blog' %}text-[#e67e22]{% endif %} dark:text-gray-200 dark:hover:text-[#e67e22]">
-                <i class="fas fa-user w-6"></i> About Owner
-            </a>
-            <a href="/contact" class="mobile-nav-link {% if page == 'contact' %}text-[#e67e22]{% endif %} dark:text-gray-200 dark:hover:text-[#e67e22]">
-                <i class="fas fa-envelope w-6"></i> Contact
-            </a>
-            <hr class="my-2 border-gray-200 dark:border-gray-700">
-            <a href="tel:+256700123456" class="mobile-nav-link text-[#e67e22] font-semibold dark:text-[#f39c12]">
-                <i class="fas fa-phone w-6"></i> Call: +256 700 123 456
-            </a>
-            <a href="/login" class="mobile-nav-link dark:text-gray-200 dark:hover:text-[#e67e22]">
-                <i class="fas fa-sign-in-alt w-6"></i> Log in
-            </a>
-            <a href="/register" class="mobile-nav-link text-[#e67e22] font-semibold dark:text-[#f39c12]">
-                <i class="fas fa-user-plus w-6"></i> Sign up
-            </a>
+        <!-- MOBILE MENU -->
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 py-2 space-y-1">
+                <a href="/" class="mobile-nav-link {% if page == 'home' %}text-[#e67e22]{% endif %}">
+                    <i class="fas fa-home w-6"></i> Home
+                </a>
+                <a href="/about" class="mobile-nav-link {% if page == 'about' %}text-[#e67e22]{% endif %}">
+                    <i class="fas fa-info-circle w-6"></i> About
+                </a>
+                <a href="/services" class="mobile-nav-link {% if page == 'services' %}text-[#e67e22]{% endif %}">
+                    <i class="fas fa-concierge-bell w-6"></i> Services
+                </a>
+                <a href="/gallery" class="mobile-nav-link {% if page == 'gallery' %}text-[#e67e22]{% endif %}">
+                    <i class="fas fa-images w-6"></i> Gallery
+                </a>
+                <a href="/blog" class="mobile-nav-link {% if page == 'blog' %}text-[#e67e22]{% endif %}">
+                    <i class="fas fa-user w-6"></i> About Owner
+                </a>
+                <a href="/contact" class="mobile-nav-link {% if page == 'contact' %}text-[#e67e22]{% endif %}">
+                    <i class="fas fa-envelope w-6"></i> Contact
+                </a>
+                <hr class="my-2 border-gray-200">
+                <a href="tel:+256700123456" class="mobile-nav-link text-[#e67e22] font-semibold">
+                    <i class="fas fa-phone w-6"></i> Call: +256 700 123 456
+                </a>
+                <a href="/login" class="mobile-nav-link">
+                    <i class="fas fa-sign-in-alt w-6"></i> Log in
+                </a>
+                <a href="/register" class="mobile-nav-link text-[#e67e22] font-semibold">
+                    <i class="fas fa-user-plus w-6"></i> Sign up
+                </a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-    <!-- Main Content -->
+    <!-- MAIN CONTENT -->
     <main class="mt-16">
         {% block content %}{% endblock %}
     </main>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
                 <span class="text-white font-bold text-xl">ROBETS</span>
                 <span class="text-[#e67e22] font-bold text-xl">TRAVEL AGENTS</span>
-                <p class="text-sm mt-2">Your trusted travel partner in Kampala, Uganda since 2012.</p>
+                <p class="text-sm mt-2 text-gray-400 italic">
+                    <span class="text-[#f1c40f] font-semibold">✦</span> 
+                    Your trusted travel partner in 
+                    <span class="text-[#f1c40f] font-semibold">Kampala, Uganda</span> 
+                    <span class="text-[#f1c40f] font-semibold">✦</span>
+                </p>
                 <div class="flex space-x-4 mt-4">
-                    <a href="#" class="text-gray-400 hover:text-white transition text-xl transform hover:scale-110"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition text-xl transform hover:scale-110"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition text-xl transform hover:scale-110"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition text-xl transform hover:scale-110"><i class="fab fa-tiktok"></i></a>
-                    
+                    <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             <div>
@@ -210,8 +227,8 @@
                 <h5 class="text-white font-semibold">Contact Info</h5>
                 <ul class="mt-2 space-y-2 text-sm">
                     <li><i class="fas fa-map-marker-alt text-[#e67e22] w-5"></i> Kampala, Uganda</li>
-                    <li><i class="fas fa-phone text-[#e67e22] w-5"></i> +256 777 824 135 / +256 701 824 135</li>
-                    <li><i class="fas fa-envelope text-[#e67e22] w-5"></i> kalanzibob@gmail.com</li>
+                    <li><i class="fas fa-phone text-[#e67e22] w-5"></i> +256 700 123 456</li>
+                    <li><i class="fas fa-envelope text-[#e67e22] w-5"></i> info@robets.com</li>
                     <li><i class="fas fa-clock text-[#e67e22] w-5"></i> 24/7 Available</li>
                 </ul>
             </div>
@@ -221,47 +238,91 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/256701824135" target="_blank" class="whatsapp-float">
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/256700123456" target="_blank" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script src="/static/js/main.js"></script>
+    
+    <!-- ===== SIMPLE MOBILE MENU JAVASCRIPT (WORKS 100%) ===== -->
     <script>
-    // Mobile menu toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-                // Change icon between bars and times
-                const icon = this.querySelector('i');
-                if (mobileMenu.classList.contains('hidden')) {
-                    icon.className = 'fas fa-bars';
-                } else {
-                    icon.className = 'fas fa-times';
+        (function() {
+            // Wait for page to load
+            function init() {
+                var btn = document.getElementById('mobile-menu-btn');
+                var menu = document.getElementById('mobile-menu');
+                
+                if (!btn || !menu) {
+                    console.log('Menu elements not found');
+                    return;
                 }
-            });
-        }
-    });
+                
+                console.log('Mobile menu initialized');
+                
+                // Click handler for menu button
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Toggle the 'show' class
+                    if (menu.classList.contains('show')) {
+                        menu.classList.remove('show');
+                        this.innerHTML = '<i class="fas fa-bars"></i>';
+                    } else {
+                        menu.classList.add('show');
+                        this.innerHTML = '<i class="fas fa-times"></i>';
+                    }
+                });
+                
+                // Click on links closes menu
+                menu.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        menu.classList.remove('show');
+                        btn.innerHTML = '<i class="fas fa-bars"></i>';
+                    });
+                });
+                
+                // Click outside closes menu
+                document.addEventListener('click', function(e) {
+                    if (menu.classList.contains('show')) {
+                        var isInside = menu.contains(e.target) || btn.contains(e.target);
+                        if (!isInside) {
+                            menu.classList.remove('show');
+                            btn.innerHTML = '<i class="fas fa-bars"></i>';
+                        }
+                    }
+                });
+            }
+            
+            // Run on page load
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
 
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenu) {
-                mobileMenu.classList.add('hidden');
-                // Reset icon
-                const menuBtn = document.getElementById('mobile-menu-btn');
-                if (menuBtn) {
-                    menuBtn.querySelector('i').className = 'fas fa-bars';
-                }
+        // Dark mode toggle
+        document.querySelector('.dark-mode-toggle')?.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            var icon = this.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.className = 'fas fa-sun';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                icon.className = 'fas fa-moon';
+                localStorage.setItem('darkMode', 'disabled');
             }
         });
-    });
-</script>
+
+        // Check saved dark mode
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            var toggle = document.querySelector('.dark-mode-toggle i');
+            if (toggle) toggle.className = 'fas fa-sun';
+        }
+    </script>
     {% block extra_scripts %}{% endblock %}
 </body>
 </html>

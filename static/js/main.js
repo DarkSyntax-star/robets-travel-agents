@@ -165,3 +165,14 @@ document.querySelectorAll('.animate-on-scroll').forEach(el => {
 
 console.log('🚐 ROBETS TRAVEL AGENTS - Your trusted travel partner in Kampala, Uganda');
 console.log('📞 Available 24/7: +256 700 123 456');
+
+// Instead of toggle('hidden'), use style.display
+menuBtn.addEventListener('click', function() {
+    if (mobileMenu.style.display === 'block') {
+        mobileMenu.style.display = 'none';
+        this.innerHTML = '<i class="fas fa-bars"></i>';
+    } else {
+        mobileMenu.style.display = 'block';
+        this.innerHTML = '<i class="fas fa-times"></i>';
+    }
+});

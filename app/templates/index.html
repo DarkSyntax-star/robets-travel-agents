@@ -3,38 +3,78 @@
 {% block content %}
 <!-- Hero Section - Uganda Focus -->
 <!-- Hero Section -->
-<section class="min-h-[85vh] flex items-center justify-center text-white px-4 relative overflow-hidden" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1400&q=80'); background-size: cover; background-position: center;">
-    <div class="absolute inset-0 bg-[#e67e22]/10 animate-pulse"></div>
+<!-- Hero Section -->
+<section class="min-h-[85vh] flex items-center justify-center text-white px-4 relative overflow-hidden" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1400&q=80'); background-size: cover; background-position: center;">
+    
+    <!-- Animated Background Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#e67e22]/20 via-transparent to-[#e67e22]/20 animate-pulse"></div>
+    
+    <!-- Decorative Circles -->
+    <div class="absolute top-20 left-10 w-32 h-32 bg-[#e67e22]/10 rounded-full blur-3xl animate-bounce"></div>
+    <div class="absolute bottom-20 right-10 w-40 h-40 bg-[#f1c40f]/10 rounded-full blur-3xl animate-bounce" style="animation-delay: 2s;"></div>
+    
     <div class="text-center max-w-4xl relative z-10">
+        <!-- 24/7 Badge -->
         <div class="animate__animated animate__fadeInDown">
-            <span class="inline-block bg-[#e67e22] text-white px-4 py-1 rounded-full text-sm font-semibold mb-4">
+            <span class="inline-block bg-[#e67e22] text-white px-5 py-1.5 rounded-full text-sm font-semibold mb-6 shadow-lg">
                 <i class="fas fa-clock mr-2"></i> Available 24/7
             </span>
+        </div>
+        
+        <!-- ===== MAIN TAGLINE WITH STYLISH FONTS ===== -->
+        <div class="animate__animated animate__fadeInUp animate__delay-1s">
+            <!-- "Your" with elegant font -->
+            <p class="text-2xl md:text-3xl font-light text-white/90 mb-2 tracking-wide">
+                <span class="font-caveat text-4xl md:text-5xl text-[#f1c40f]">✦</span>
+                <span class="font-playfair font-light italic">Your</span>
+            </p>
+            
+            <!-- Main Headline -->
             <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
-                Your Trusted <br><span class="text-[#f1c40f]">Travel Partner</span>
+                <span class="font-playfair font-black text-white drop-shadow-lg">
+                    Trusted
+                </span>
+                <br>
+                <span class="font-playfair font-bold text-[#f1c40f] drop-shadow-lg">
+                    Travel Partner
+                </span>
             </h1>
             
-            <!-- ===== STYLISH TAGLINE ===== -->
-            <div class="mt-4">
-                <p class="text-xl md:text-3xl font-light tracking-wide">
-                    in <span class="font-bold text-[#f1c40f]">Kampala</span>, 
-                    <span class="font-bold text-[#f1c40f]">Uganda</span>
-                </p>
-                <div class="flex items-center justify-center gap-2 mt-2">
-                    <span class="w-12 h-0.5 bg-[#f1c40f]"></span>
-                    <i class="fas fa-star text-[#f1c40f] text-sm animate-pulse"></i>
-                    <i class="fas fa-star text-[#f1c40f] text-sm animate-pulse" style="animation-delay: 0.3s;"></i>
-                    <i class="fas fa-star text-[#f1c40f] text-sm animate-pulse" style="animation-delay: 0.6s;"></i>
-                    <span class="w-12 h-0.5 bg-[#f1c40f]"></span>
-                </div>
+            <!-- Location with stylish font -->
+            <div class="mt-3 flex flex-wrap items-center justify-center gap-2">
+                <span class="text-xl md:text-2xl font-light text-white/80">in</span>
+                <span class="font-caveat text-3xl md:text-4xl font-bold text-[#f1c40f] animate-pulse">
+                    Kampala
+                </span>
+                <span class="text-xl md:text-2xl font-light text-white/80">,</span>
+                <span class="font-caveat text-3xl md:text-4xl font-bold text-[#f1c40f] animate-pulse" style="animation-delay: 0.5s;">
+                    Uganda
+                </span>
             </div>
-            <!-- ===== END STYLISH TAGLINE ===== -->
             
-            <p class="text-xl md:text-2xl mt-4 opacity-95 font-light">
-                Airport Pickups • Hotel Bookings • Car Hire • Town Tours
-            </p>
+            <!-- Decorative Line with Stars -->
+            <div class="flex items-center justify-center gap-4 mt-4">
+                <span class="w-16 h-0.5 bg-gradient-to-r from-transparent to-[#f1c40f]"></span>
+                <div class="flex gap-1">
+                    <i class="fas fa-star text-[#f1c40f] text-xs animate-pulse"></i>
+                    <i class="fas fa-star text-[#f1c40f] text-xs animate-pulse" style="animation-delay: 0.2s;"></i>
+                    <i class="fas fa-star text-[#f1c40f] text-xs animate-pulse" style="animation-delay: 0.4s;"></i>
+                    <i class="fas fa-star text-[#f1c40f] text-xs animate-pulse" style="animation-delay: 0.6s;"></i>
+                    <i class="fas fa-star text-[#f1c40f] text-xs animate-pulse" style="animation-delay: 0.8s;"></i>
+                </div>
+                <span class="w-16 h-0.5 bg-gradient-to-l from-transparent to-[#f1c40f]"></span>
+            </div>
         </div>
-        <div class="mt-8 flex flex-wrap justify-center gap-4 animate__animated animate__fadeInUp">
+        <!-- ===== END MAIN TAGLINE ===== -->
+        
+        <!-- Sub Text -->
+        <p class="text-xl md:text-2xl mt-6 opacity-90 font-light tracking-wide animate__animated animate__fadeInUp animate__delay-2s">
+            Airport Pickups <span class="text-[#f1c40f]">•</span> Hotel Bookings 
+            <span class="text-[#f1c40f]">•</span> Car Hire <span class="text-[#f1c40f]">•</span> Town Tours
+        </p>
+        
+        <!-- CTA Buttons -->
+        <div class="mt-8 flex flex-wrap justify-center gap-4 animate__animated animate__fadeInUp animate__delay-3s">
             <a href="/services" class="bg-[#e67e22] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#d35400] transition transform hover:scale-105 inline-flex items-center gap-2 shadow-lg">
                 Our Services <i class="fas fa-arrow-right"></i>
             </a>
@@ -42,8 +82,22 @@
                 Contact Us <i class="fas fa-headset"></i>
             </a>
         </div>
+        
+        <!-- Trust Indicators -->
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm text-white/80 animate__animated animate__fadeInUp animate__delay-4s">
+            <span class="flex items-center gap-2">
+                <i class="fas fa-check-circle text-green-400"></i> 10+ Years
+            </span>
+            <span class="flex items-center gap-2">
+                <i class="fas fa-check-circle text-green-400"></i> 500+ Travelers
+            </span>
+            <span class="flex items-center gap-2">
+                <i class="fas fa-check-circle text-green-400"></i> 24/7 Support
+            </span>
+        </div>
     </div>
-    <!-- Animated scroll indicator -->
+    
+    <!-- Scroll Indicator -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <i class="fas fa-chevron-down text-2xl text-white/60"></i>
     </div>
@@ -134,12 +188,14 @@
                     Read Our Story <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
+             <a href="/gallery" class="relative rounded-2xl overflow-hidden group cursor-pointer block">
             <div class="grid grid-cols-2 gap-4 animate__animated animate__fadeInRight">
-                <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=400&q=80" alt="Uganda" class="rounded-2xl h-48 w-full object-cover shadow-lg hover:scale-105 transition">
-                <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&q=80" alt="Kampala" class="rounded-2xl h-48 w-full object-cover shadow-lg hover:scale-105 transition mt-8">
-                <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=400&q=80" alt="Uganda" class="rounded-2xl h-48 w-full object-cover shadow-lg hover:scale-105 transition -mt-8">
-                <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&q=80" alt="Kampala" class="rounded-2xl h-48 w-full object-cover shadow-lg hover:scale-105 transition">
+                <img src="/static/images/cars.jpeg" alt="Uganda" class="rounded-2xl h-48 w-full object-cover shadow-lg hover:scale-105 transition">
+                <img src="/static/images/kampala.jpeg" alt="Kampala" class="rounded-2xl h-48 w-full object-cover shadow-lg hover:scale-105 transition mt-8">
+                <img src="/static/images/wildlife14.jpeg" alt="Uganda" class="rounded-2xl h-48 w-full object-cover shadow-lg hover:scale-105 transition -mt-8">
+                <img src="/static/images/equator1.jpeg" alt="Tours" class="rounded-2xl h-48 w-full object-cover shadow-lg hover:scale-105 transition">
             </div>
+            </a>
         </div>
     </div>
 </section>
